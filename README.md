@@ -1,35 +1,50 @@
 # 🚀 AI Job Application Assistant
 
-An AI-powered application that automates the complete job application lifecycle, including job description parsing, ATS compatibility analysis, resume optimization, cover letter generation, and application tracking.
+An enterprise-grade AI-powered application that automates the job application lifecycle, including resume parsing, job description parsing, ATS analysis, resume optimization, cover letter generation, and application tracking.
+
+The project is being developed incrementally using **Agile Scrum** and **Software Development Life Cycle (SDLC)** best practices.
 
 ---
 
-## 📌 Project Overview
+# 📌 Project Overview
 
-AI Job Application Assistant is an enterprise-style software project developed using Software Development Life Cycle (SDLC) principles.
+The AI Job Application Assistant helps job seekers streamline their application process by:
 
-The application helps job seekers:
+- 📄 Reading resumes (PDF, DOCX, TXT)
+- 📄 Reading job descriptions
+- 🔍 Extracting structured information
+- 🎯 Comparing resumes with job descriptions
+- 📝 Generating ATS-friendly resumes
+- ✉️ Generating AI-powered cover letters
+- 📊 Tracking job applications
+- 📈 Visualizing application analytics
 
-- 📄 Parse Job Descriptions
-- 📄 Parse Resumes
-- 🎯 Calculate ATS Match Score
-- 📝 Generate ATS-Optimized Resumes
-- ✉️ Generate Cover Letters
-- 📊 Track Job Applications
-- 📈 Visualize Application Analytics
+This project emphasizes:
 
-The project is being developed incrementally using Agile sprints and emphasizes clean architecture, modular design, and maintainable code.
+- Modular Architecture
+- Object-Oriented Programming
+- Clean Code
+- Enterprise SDLC
+- Agile Development
+- Production-ready Design
 
 ---
 
-# ✨ Features
+# ✅ Current Features (Sprint 3)
 
-## Current (MVP)
+### Core Modules
 
-- Resume Parser
-- Job Description Parser
-- ATS Match Engine
-- Resume Generator
+- ✅ Centralized Logging Framework
+- ✅ SQLite Database Management
+- ✅ PDF, DOCX & TXT File Reader
+- ✅ Resume Parser
+- ✅ Job Description Parser
+
+### Upcoming Modules
+
+- ATS Matching Engine
+- Skill Extractor
+- Resume Optimizer
 - Cover Letter Generator
 - Application Tracker
 - Analytics Dashboard
@@ -38,35 +53,35 @@ The project is being developed incrementally using Agile sprints and emphasizes 
 
 # 🏗 Architecture
 
-```
-                    Streamlit UI
-                         │
-                         ▼
-                Business Logic Layer
-                         │
-        ┌────────────────┼────────────────┐
-        ▼                ▼                ▼
- Resume Parser     JD Parser       ATS Engine
-        │                │                │
-        └────────────────┼────────────────┘
-                         ▼
-                  SQLite Database
-                         │
-                         ▼
-                  Reports / Files
+```text
+                        Streamlit UI
+                             │
+                             ▼
+                    Business Logic Layer
+                             │
+       ┌─────────────────────┼─────────────────────┐
+       ▼                     ▼                     ▼
+ Resume Parser      JD Parser          ATS Engine
+       │                     │
+       └──────────────┬──────┘
+                      ▼
+                SQLite Database
+                      │
+                      ▼
+              Reports / Generated Files
 ```
 
 ---
 
 # 📁 Project Structure
 
-```
+```text
 AI-Job-Application-Assistant/
 
 │
 ├── app.py
-├── requirements.txt
 ├── README.md
+├── requirements.txt
 ├── .gitignore
 │
 ├── config/
@@ -80,17 +95,19 @@ AI-Job-Application-Assistant/
 ├── docs/
 │
 ├── logs/
+│   └── application.log
 │
 ├── modules/
+│   ├── logger.py
+│   ├── database.py
+│   ├── file_reader.py
+│   ├── resume_parser.py
+│   └── job_description_parser.py
 │
 ├── prompts/
-│
 ├── reports/
-│
 ├── templates/
-│
 ├── tests/
-│
 └── tracker/
 ```
 
@@ -99,11 +116,11 @@ AI-Job-Application-Assistant/
 # 🛠 Technology Stack
 
 | Category | Technology |
-|----------|------------|
+|-----------|------------|
 | Language | Python 3.12 |
 | UI | Streamlit |
 | Database | SQLite |
-| AI | OpenAI API |
+| AI | OpenAI API *(Upcoming)* |
 | Data Processing | Pandas |
 | Document Processing | pdfplumber, python-docx |
 | Visualization | Plotly |
@@ -111,20 +128,18 @@ AI-Job-Application-Assistant/
 
 ---
 
-# 📂 Documentation
+# 📂 Project Documentation
 
-The project includes comprehensive design documentation.
-
-| Document | Description |
-|----------|-------------|
-| Project Charter | Project objectives and vision |
-| Software Requirements Specification | Functional and non-functional requirements |
-| High-Level Design | Overall architecture |
-| Low-Level Design | Module-level implementation details |
-| Database Design | Database schema and relationships |
-| UI Wireframes | User interface design |
-| Sprint Backlog | Agile sprint planning |
-| Project Roadmap | Development roadmap |
+| Document | Status |
+|----------|--------|
+| Project Charter | ✅ |
+| Software Requirements Specification | ✅ |
+| High-Level Design | ✅ |
+| Low-Level Design | ✅ |
+| Database Design | ✅ |
+| UI Wireframes | ✅ |
+| Sprint Backlog | ✅ |
+| Project Roadmap | ✅ |
 
 ---
 
@@ -144,15 +159,15 @@ git clone https://github.com/raju-nalla/AI-Job-Application-Assistant.git
 python -m venv .venv
 ```
 
-Activate the environment:
+### Activate Environment
 
-### Windows
+#### Windows
 
 ```bash
 .venv\Scripts\activate
 ```
 
-### Linux / macOS
+#### Linux / macOS
 
 ```bash
 source .venv/bin/activate
@@ -168,7 +183,7 @@ pip install -r requirements.txt
 
 ---
 
-## Run the Application
+## Run Application
 
 ```bash
 streamlit run app.py
@@ -182,40 +197,45 @@ streamlit run app.py
 |---------|-------------|--------|
 | Sprint 1 | Project Setup | ✅ Completed |
 | Sprint 2 | Architecture & Design | ✅ Completed |
-| Sprint 3 | Resume & JD Parser | 🚧 In Progress |
-| Sprint 4 | ATS Engine | ⏳ Planned |
-| Sprint 5 | Resume Generator | ⏳ Planned |
-| Sprint 6 | Cover Letter Generator | ⏳ Planned |
-| Sprint 7 | Dashboard | ⏳ Planned |
+| Sprint 3 | Core Parsing Modules | ✅ Completed |
+| Sprint 4 | ATS Matching Engine | 🚧 In Progress |
+| Sprint 5 | AI Resume Optimizer | ⏳ Planned |
+| Sprint 6 | AI Cover Letter Generator | ⏳ Planned |
+| Sprint 7 | Streamlit Dashboard | ⏳ Planned |
 | Sprint 8 | Deployment | ⏳ Planned |
 
 ---
 
 # 🎯 Future Enhancements
 
-- REST APIs (FastAPI)
+- FastAPI REST APIs
 - PostgreSQL Support
-- Azure Deployment
+- Azure Cloud Deployment
 - User Authentication
 - Multi-user Support
 - AI Career Coach
-- Interview Preparation
+- Interview Preparation Assistant
 - Recruiter CRM
 - Job Recommendation Engine
+- Email Automation
 
 ---
 
 # 🤝 Contributing
 
-Contributions, ideas, and feedback are welcome.
+Contributions, suggestions, and feedback are welcome.
 
-Please fork the repository, create a feature branch, and submit a pull request.
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push the branch
+5. Open a Pull Request
 
 ---
 
 # 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**.
 
 ---
 
@@ -223,20 +243,38 @@ This project is licensed under the MIT License.
 
 **Raju Nalla**
 
-- Azure Data Engineer
-- Python Developer
-- Data Engineering Enthusiast
+**Azure Data Engineer | Python Developer | Data Engineering Enthusiast**
 
-GitHub:
-https://github.com/raju-nalla
-
-LinkedIn:
-https://www.linkedin.com/in/raju-nalla
+- GitHub: https://github.com/raju-nalla
+- LinkedIn: https://www.linkedin.com/in/raju-nalla
 
 ---
 
 # ⭐ Project Status
 
-🚧 Active Development
+## 🚀 Active Development
 
-Current Sprint: **Sprint 3 – Resume & Job Description Parser**
+### Completed
+
+- ✅ Sprint 1 – Project Setup
+- ✅ Sprint 2 – Software Design
+- ✅ Sprint 3 – Core Parsing Modules
+
+### Current Sprint
+
+🚧 **Sprint 4 – ATS Matching Engine**
+
+### Repository Progress
+
+- ✅ Enterprise Project Structure
+- ✅ SDLC Documentation
+- ✅ Modular Python Architecture
+- ✅ Centralized Logging
+- ✅ SQLite Database
+- ✅ File Reader
+- ✅ Resume Parser
+- ✅ Job Description Parser
+
+---
+
+## ⭐ If you found this project interesting, please consider giving it a Star!
