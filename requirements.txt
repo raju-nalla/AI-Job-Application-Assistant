@@ -1,0 +1,12 @@
+streamlit
+openai
+pandas
+python-docx
+pdfplumber
+reportlab
+beautifulsoup4
+playwright
+plotly
+pyyaml
+loguru
+pytest

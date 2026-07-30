@@ -1,0 +1,12 @@
+app:
+  name: AI Job Application Assistant
+  version: 1.0.0
+
+database:
+  path: data/database/jobs.db
+
+logging:
+  level: INFO
+
+ai:
+  provider: openai

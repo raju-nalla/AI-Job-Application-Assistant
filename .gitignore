@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+
+logs/
+
+data/generated/
+
+*.db
+
+.env
+
+.vscode/
