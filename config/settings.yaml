@@ -3,10 +3,19 @@ app:
   version: 1.0.0
 
 database:
-  path: data/database/jobs.db
+  path: data/database/job_tracker.db
 
 logging:
   level: INFO
 
+paths:
+  prompts: prompts
+  reports: reports
+  generated: data/generated
+
 ai:
-  provider: openai
+  provider: openrouter
+  model: openai/gpt-oss-20b:free
+  timeout: 60
+  max_completion_tokens: 2000
+  max_retries: 3

@@ -1,72 +1,61 @@
-# 🚀 AI Job Application Assistant
+# 🤖 AI Job Application Assistant
 
-An enterprise-grade AI-powered application that automates the job application lifecycle, including resume parsing, job description parsing, ATS compatibility analysis, resume optimization, cover letter generation, and application tracking.
+An enterprise-grade AI-powered application that helps job seekers optimize resumes, improve ATS scores, generate cover letters, and prepare for interviews using Large Language Models (LLMs).
 
-The project is built using **Python**, **Streamlit**, **SQLite**, and **OpenAI**, following **Software Development Life Cycle (SDLC)** and **Agile Scrum** methodologies.
-
----
-
-# 📌 Project Overview
-
-The AI Job Application Assistant helps job seekers streamline their application process by:
-
-- 📄 Parse resumes (PDF, DOCX, TXT)
-- 📄 Parse job descriptions
-- 🧠 Extract technical skills intelligently
-- 🎯 Perform enterprise-grade ATS analysis
-- 📊 Generate ATS analysis reports
-- 📝 Optimize resumes using AI *(Upcoming)*
-- ✉️ Generate AI-powered cover letters *(Upcoming)*
-- 📈 Track job applications *(Upcoming)*
-
-The project emphasizes:
-
-- Enterprise Software Design
-- Modular Architecture
-- Object-Oriented Programming
-- Clean Code
-- Reusable Components
-- Agile Sprint-Based Development
+Built with a modular, production-ready architecture following Software Development Life Cycle (SDLC) and Agile methodologies.
 
 ---
 
-# ✅ Current Features
+## 🚀 Features
 
-### Core Modules
+### ✅ Resume Parsing
+- Extracts text from PDF and DOCX resumes
+- Structured resume processing
 
-- ✅ Centralized Logging Framework
-- ✅ SQLite Database Management
-- ✅ PDF / DOCX / TXT File Reader
-- ✅ Resume Parser
-- ✅ Job Description Parser
-- ✅ Enterprise Skill Repository
-- ✅ Intelligent Skill Extractor
-- ✅ Enterprise ATS Matching Engine
-- ✅ ATS Report Generator
+### ✅ Job Description Parsing
+- Reads and analyzes job descriptions
+- Extracts required skills and technologies
+
+### ✅ Skill Extraction
+- Detects technical skills using configurable skill dictionaries
+- Supports Azure, Snowflake, Databricks, Python, SQL, Spark, and more
+
+### ✅ ATS Score Engine
+- Calculates ATS compatibility score
+- Skill matching analysis
+- Missing skills identification
+- Category-wise scoring
+- Recommendations for improvement
+
+### ✅ ATS Report Generator
+- Generates detailed ATS reports
+- Highlights strengths and weaknesses
+- Saves reports locally
+
+### ✅ Prompt Builder
+- Uses reusable prompt templates
+- Dynamic placeholder replacement
+- Easy prompt customization
+
+### ✅ AI Client
+- Centralized AI integration
+- OpenRouter support
+- Configurable LLM model
+- Retry mechanism
+- Logging
+- Environment-based configuration
 
 ---
 
-# 🏗 Architecture
+## 🚧 Upcoming Features
 
-```text
-                          Streamlit UI
-                               │
-                               ▼
-                     Business Logic Layer
-                               │
-     ┌───────────────┬───────────────┬───────────────┐
-     ▼               ▼               ▼
- Resume Parser   JD Parser   ATS Report Generator
-     │               │               ▲
-     ▼               ▼               │
- Skill Extractor ───────► ATS Engine
-     │
-     ▼
- Skills Repository (skills.json)
-                               │
-                               ▼
-                        SQLite Database
-```
+- AI Resume Optimizer
+- Cover Letter Generator
+- Interview Question Generator
+- Career Coach
+- Job Tracker
+- Streamlit Web Application
+- Recruiter Dashboard
 
 ---
 
@@ -76,25 +65,14 @@ The project emphasizes:
 AI-Job-Application-Assistant/
 
 │
-├── app.py
-├── README.md
-├── requirements.txt
-├── .gitignore
-│
 ├── config/
+│   ├── settings.yaml
+│   └── config_loader.py
 │
 ├── data/
 │   ├── database/
 │   ├── generated/
-│   ├── job_descriptions/
-│   ├── resumes/
-│   └── skills/
-│       └── skills.json
-│
-├── docs/
-│
-├── logs/
-│   └── application.log
+│   └── samples/
 │
 ├── modules/
 │   ├── logger.py
@@ -104,184 +82,173 @@ AI-Job-Application-Assistant/
 │   ├── job_description_parser.py
 │   ├── skill_extractor.py
 │   ├── ats_engine.py
-│   └── ats_report_generator.py
+│   ├── ats_report_generator.py
+│   ├── prompt_builder.py
+│   └── openai_client.py
 │
 ├── prompts/
+│   ├── resume_optimizer_prompt.txt
+│   ├── cover_letter_prompt.txt
+│   ├── interview_prompt.txt
+│   └── career_coach_prompt.txt
+│
 ├── reports/
-├── templates/
+│
+├── tracker/
+│
 ├── tests/
-└── tracker/
+│
+├── logs/
+│
+├── app.py
+├── requirements.txt
+├── README.md
+└── .env.example
 ```
 
 ---
 
-# 🚀 Enterprise Workflow
+# ⚙️ Technology Stack
+
+| Category | Technologies |
+|----------|--------------|
+| Language | Python 3.11+ |
+| AI | OpenRouter |
+| LLM | GPT OSS 20B Free |
+| Configuration | YAML |
+| Environment | dotenv |
+| Database | SQLite |
+| Parsing | PyPDF2, python-docx |
+| Logging | Python Logging |
+| Architecture | Modular |
+| Development | SDLC + Agile |
+
+---
+
+# 🏗 Architecture
 
 ```text
 Resume
-   │
-   ▼
-File Reader
-   │
-   ▼
+      │
+      ▼
 Resume Parser
-   │
-   ▼
+      │
+      ▼
 Skill Extractor
-   │
-   ▼
+      │
+      ▼
 ATS Engine
-   │
-   ▼
-ATS Report Generator
-   │
-   ▼
-ATS Analysis Report
+      │
+      ▼
+ATS Report
+      │
+      ▼
+Prompt Builder
+      │
+      ▼
+AI Client
+      │
+      ▼
+Large Language Model
+      │
+      ▼
+Optimized Resume
 ```
 
 ---
 
-# ✨ ATS Engine Features
+# ⚙️ Configuration
 
-The Enterprise ATS Engine provides:
+All application settings are managed through:
 
-- ✅ Weighted ATS Score
-- ✅ Category-wise Skill Matching
-- ✅ Priority-based Skill Analysis
-- ✅ Missing Skill Detection
-- ✅ Extra Skill Identification
-- ✅ Strength Analysis
-- ✅ Weakness Analysis
-- ✅ Intelligent Recommendations
-- ✅ Professional ATS Report Generation
+```text
+config/settings.yaml
+```
 
----
+Example:
 
-# 🛠 Technology Stack
-
-| Category | Technology |
-|-----------|------------|
-| Language | Python 3.12 |
-| UI | Streamlit |
-| Database | SQLite |
-| AI | OpenAI API *(Upcoming)* |
-| Data Processing | Pandas |
-| Document Processing | pdfplumber, python-docx |
-| Visualization | Plotly |
-| Version Control | Git & GitHub |
+```yaml
+ai:
+  provider: openrouter
+  model: openai/gpt-oss-20b:free
+  timeout: 60
+  max_completion_tokens: 2000
+  max_retries: 3
+```
 
 ---
 
-# 📂 Project Documentation
+# 🔐 Environment Variables
 
-| Document | Status |
+Create a `.env` file:
+
+```env
+OPENAI_API_KEY=your_api_key
+```
+
+> If using OpenRouter, store your OpenRouter API key and configure the client accordingly.
+
+---
+
+# 🧪 Running Tests
+
+```bash
+python test_logger.py
+
+python test_database.py
+
+python test_file_reader.py
+
+python test_resume_parser.py
+
+python test_job_description_parser.py
+
+python test_ats_engine.py
+
+python test_ats_report_generator.py
+
+python test_config_loader.py
+
+python test_prompt_builder.py
+
+python test_openai_client.py
+```
+
+---
+
+# 📈 Current Progress
+
+| Sprint | Status |
 |----------|--------|
-| Project Charter | ✅ |
-| Software Requirements Specification | ✅ |
-| High-Level Design | ✅ |
-| Low-Level Design | ✅ |
-| Database Design | ✅ |
-| UI Wireframes | ✅ |
-| Sprint Backlog | ✅ |
-| Project Roadmap | ✅ |
+| Sprint 1 | ✅ Completed |
+| Sprint 2 | ✅ Completed |
+| Sprint 3 | ✅ Completed |
+| Sprint 4 | ✅ Completed |
+| Sprint 5 | 🚧 In Progress |
+
+Completed in Sprint 5:
+
+- Prompt Templates
+- Prompt Builder
+- Configuration Loader
+- AI Client (OpenRouter)
+
+Upcoming:
+
+- Resume Optimizer
+- Cover Letter Generator
+- Interview Coach
 
 ---
 
-# 🚀 Getting Started
+# 🎯 Project Goals
 
-## Clone Repository
-
-```bash
-git clone https://github.com/raju-nalla/AI-Job-Application-Assistant.git
-```
-
----
-
-## Create Virtual Environment
-
-```bash
-python -m venv .venv
-```
-
-### Activate Environment
-
-#### Windows
-
-```bash
-.venv\Scripts\activate
-```
-
-#### Linux / macOS
-
-```bash
-source .venv/bin/activate
-```
-
----
-
-## Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## Run the Application
-
-```bash
-streamlit run app.py
-```
-
----
-
-# 📅 Development Roadmap
-
-| Sprint | Deliverable | Status |
-|---------|-------------|--------|
-| Sprint 1 | Project Setup | ✅ Completed |
-| Sprint 2 | Architecture & Design | ✅ Completed |
-| Sprint 3 | Resume & JD Parsing Modules | ✅ Completed |
-| Sprint 4 | Enterprise ATS Analysis Engine | ✅ Completed |
-| Sprint 5 | AI Resume Optimizer | 🚧 In Progress |
-| Sprint 6 | AI Cover Letter Generator | ⏳ Planned |
-| Sprint 7 | Streamlit Dashboard | ⏳ Planned |
-| Sprint 8 | Deployment | ⏳ Planned |
-
----
-
-# 🎯 Future Enhancements
-
-- AI Resume Optimizer
-- AI Cover Letter Generator
-- AI Career Coach
-- Interview Preparation Assistant
-- Resume Version Management
-- Job Recommendation Engine
-- PostgreSQL Support
-- FastAPI REST APIs
-- Azure Cloud Deployment
-- User Authentication
-- Multi-user Support
-- Email Automation
-
----
-
-# 🤝 Contributing
-
-Contributions, suggestions, and feedback are welcome.
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push the branch
-5. Open a Pull Request
-
----
-
-# 📄 License
-
-This project is licensed under the **MIT License**.
+- Improve ATS scores using AI
+- Automate resume customization
+- Generate personalized cover letters
+- Prepare candidates for interviews
+- Provide career guidance
+- Track job applications
 
 ---
 
@@ -289,61 +256,16 @@ This project is licensed under the **MIT License**.
 
 **Raju Nalla**
 
-**Azure Data Engineer | Python Developer | Data Engineering Enthusiast**
+Azure Data Engineer
 
-- GitHub: https://github.com/raju-nalla
-- LinkedIn: https://www.linkedin.com/in/raju-nalla
+GitHub: https://github.com/raju-nalla
 
----
+Portfolio: https://raju-nalla.github.io/
 
-# ⭐ Project Status
-
-## 🚀 Active Development
-
-### Completed
-
-- ✅ Sprint 1 – Project Setup
-- ✅ Sprint 2 – Software Design & Architecture
-- ✅ Sprint 3 – Resume & Job Description Parsing
-- ✅ Sprint 4 – Enterprise ATS Analysis Engine
-
-### Current Sprint
-
-🚧 **Sprint 5 – AI Resume Optimizer**
-
-### Repository Highlights
-
-- ✅ Enterprise SDLC Documentation
-- ✅ Modular Python Architecture
-- ✅ Centralized Logging
-- ✅ SQLite Database
-- ✅ File Reader (PDF, DOCX, TXT)
-- ✅ Resume Parser
-- ✅ Job Description Parser
-- ✅ Enterprise Skill Repository
-- ✅ Intelligent Skill Extractor
-- ✅ Weighted ATS Analysis Engine
-- ✅ ATS Report Generator
+LinkedIn: https://www.linkedin.com/in/raju-nalla
 
 ---
 
-## 📊 Current Project Progress
+# ⭐ If you found this project useful
 
-```text
-Sprint 1  ██████████ 100%
-Sprint 2  ██████████ 100%
-Sprint 3  ██████████ 100%
-Sprint 4  ██████████ 100%
-Sprint 5  ░░░░░░░░░░   0%
-Sprint 6  ░░░░░░░░░░   0%
-Sprint 7  ░░░░░░░░░░   0%
-Sprint 8  ░░░░░░░░░░   0%
-
-Overall Progress ≈ 50%
-```
-
----
-
-## ⭐ If you found this project interesting, please consider giving it a Star!
-
-Your support helps motivate further development and improvements.
+Please consider giving the repository a ⭐ on GitHub.
