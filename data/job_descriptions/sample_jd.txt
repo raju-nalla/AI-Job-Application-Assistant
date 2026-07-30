@@ -1,0 +1,24 @@
+Data Engineer
+
+Company: EY
+
+Location: Hyderabad
+
+Experience: 4+ years
+
+Required Skills
+
+Azure Data Factory
+Azure Databricks
+PySpark
+Python
+SQL
+Snowflake
+
+Responsibilities
+
+Develop ETL pipelines.
+
+Optimize Spark jobs.
+
+Build cloud data solutions.
