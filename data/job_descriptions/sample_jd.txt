@@ -1,24 +1,20 @@
 Data Engineer
 
-Company: EY
+Company: Microsoft
 
-Location: Hyderabad
-
-Experience: 4+ years
+Experience: 5+ years
 
 Required Skills
 
-Azure Data Factory
-Azure Databricks
-PySpark
 Python
 SQL
+Azure Data Factory
+Azure Databricks
 Snowflake
-
-Responsibilities
-
-Develop ETL pipelines.
-
-Optimize Spark jobs.
-
-Build cloud data solutions.
+Terraform
+Apache Airflow
+dbt
+Docker
+Kubernetes
+Azure DevOps
+Delta Lake

@@ -1,0 +1,291 @@
+{
+  "Programming": [
+    {
+      "name": "Python",
+      "aliases": ["Python 3"],
+      "priority": "High"
+    },
+    {
+      "name": "SQL",
+      "aliases": ["T-SQL", "PL/SQL", "SQL Server"],
+      "priority": "High"
+    },
+    {
+      "name": "Scala",
+      "aliases": [],
+      "priority": "Medium"
+    }
+  ],
+
+  "Big Data": [
+    {
+      "name": "PySpark",
+      "aliases": [],
+      "priority": "High"
+    },
+    {
+      "name": "Apache Spark",
+      "aliases": ["Spark"],
+      "priority": "High"
+    },
+    {
+      "name": "Spark SQL",
+      "aliases": [],
+      "priority": "Medium"
+    },
+    {
+      "name": "Delta Lake",
+      "aliases": ["Delta"],
+      "priority": "High"
+    },
+    {
+      "name": "Delta Live Tables",
+      "aliases": ["DLT"],
+      "priority": "Medium"
+    }
+  ],
+
+  "Cloud Platforms": [
+    {
+      "name": "Microsoft Azure",
+      "aliases": ["Azure"],
+      "priority": "High"
+    },
+    {
+      "name": "Amazon Web Services",
+      "aliases": ["AWS"],
+      "priority": "Medium"
+    },
+    {
+      "name": "Google Cloud Platform",
+      "aliases": ["GCP", "Google Cloud"],
+      "priority": "Medium"
+    },
+    {
+      "name": "Snowflake",
+      "aliases": [],
+      "priority": "High"
+    },
+    {
+      "name": "Microsoft Fabric",
+      "aliases": ["Fabric"],
+      "priority": "High"
+    }
+  ],
+
+  "Azure Services": [
+    {
+      "name": "Azure Data Factory",
+      "aliases": ["ADF"],
+      "priority": "High"
+    },
+    {
+      "name": "Azure Databricks",
+      "aliases": ["Databricks"],
+      "priority": "High"
+    },
+    {
+      "name": "Azure Synapse Analytics",
+      "aliases": ["Azure Synapse", "Synapse"],
+      "priority": "Medium"
+    },
+    {
+      "name": "Azure Data Lake Storage Gen2",
+      "aliases": ["ADLS Gen2", "ADLS"],
+      "priority": "High"
+    },
+    {
+      "name": "Azure SQL Database",
+      "aliases": ["Azure SQL"],
+      "priority": "Medium"
+    },
+    {
+      "name": "Azure Blob Storage",
+      "aliases": ["Blob Storage"],
+      "priority": "Medium"
+    },
+    {
+      "name": "Azure Key Vault",
+      "aliases": ["Key Vault"],
+      "priority": "Medium"
+    },
+    {
+      "name": "Azure DevOps",
+      "aliases": [],
+      "priority": "High"
+    },
+    {
+      "name": "Azure Event Hubs",
+      "aliases": ["Event Hub"],
+      "priority": "Medium"
+    },
+    {
+      "name": "Azure Functions",
+      "aliases": [],
+      "priority": "Low"
+    }
+  ],
+
+  "Databases": [
+    {
+      "name": "Oracle",
+      "aliases": [],
+      "priority": "Medium"
+    },
+    {
+      "name": "PostgreSQL",
+      "aliases": ["Postgres"],
+      "priority": "Medium"
+    },
+    {
+      "name": "MySQL",
+      "aliases": [],
+      "priority": "Medium"
+    },
+    {
+      "name": "MongoDB",
+      "aliases": [],
+      "priority": "Medium"
+    },
+    {
+      "name": "Teradata",
+      "aliases": [],
+      "priority": "Medium"
+    },
+    {
+      "name": "SQLite",
+      "aliases": [],
+      "priority": "Low"
+    }
+  ],
+
+  "ETL & Data Integration": [
+    {
+      "name": "SSIS",
+      "aliases": ["SQL Server Integration Services"],
+      "priority": "Medium"
+    },
+    {
+      "name": "ETL",
+      "aliases": [],
+      "priority": "High"
+    },
+    {
+      "name": "ELT",
+      "aliases": [],
+      "priority": "Medium"
+    },
+    {
+      "name": "Change Data Capture",
+      "aliases": ["CDC"],
+      "priority": "Medium"
+    },
+    {
+      "name": "Incremental Load",
+      "aliases": [],
+      "priority": "High"
+    }
+  ],
+
+  "Workflow & Orchestration": [
+    {
+      "name": "Apache Airflow",
+      "aliases": ["Airflow"],
+      "priority": "High"
+    },
+    {
+      "name": "Databricks Workflows",
+      "aliases": [],
+      "priority": "Medium"
+    },
+    {
+      "name": "ADF Pipelines",
+      "aliases": [],
+      "priority": "Medium"
+    }
+  ],
+
+  "DevOps & Version Control": [
+    {
+      "name": "Git",
+      "aliases": [],
+      "priority": "High"
+    },
+    {
+      "name": "GitHub",
+      "aliases": [],
+      "priority": "Medium"
+    },
+    {
+      "name": "CI/CD",
+      "aliases": ["Continuous Integration", "Continuous Deployment"],
+      "priority": "Medium"
+    },
+    {
+      "name": "Docker",
+      "aliases": [],
+      "priority": "Medium"
+    },
+    {
+      "name": "Kubernetes",
+      "aliases": ["K8s"],
+      "priority": "Medium"
+    },
+    {
+      "name": "Terraform",
+      "aliases": [],
+      "priority": "High"
+    },
+    {
+      "name": "Jenkins",
+      "aliases": [],
+      "priority": "Low"
+    }
+  ],
+
+  "Analytics & BI": [
+    {
+      "name": "Power BI",
+      "aliases": [],
+      "priority": "High"
+    },
+    {
+      "name": "Tableau",
+      "aliases": [],
+      "priority": "Medium"
+    },
+    {
+      "name": "Microsoft Excel",
+      "aliases": ["Excel"],
+      "priority": "Low"
+    }
+  ],
+
+  "Data Formats": [
+    {
+      "name": "CSV",
+      "aliases": [],
+      "priority": "Low"
+    },
+    {
+      "name": "JSON",
+      "aliases": [],
+      "priority": "Medium"
+    },
+    {
+      "name": "XML",
+      "aliases": [],
+      "priority": "Low"
+    },
+    {
+      "name": "Parquet",
+      "aliases": [],
+      "priority": "High"
+    },
+    {
+      "name": "Avro",
+      "aliases": [],
+      "priority": "Medium"
+    }
+  ]
+}
