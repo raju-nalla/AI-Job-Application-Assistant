@@ -1,0 +1,151 @@
+This role is pivotal in driving the planning, modeling, building, and management of our BI and analytics solutions as we continue to grow. The Senior Data Engineer will work independently on analytics development while collaborating with executive team members and business leaders in Operations, People & Culture, Finance, and Marketing. The primary purpose of this role is to deliver effective and visually appealing reports and dashboards that empower decision-making across the organization.
+
+
+
+Role & responsibilities-
+
+Provides leadership to team including coaching, mentoring and professional development or oversight to a department. Responsible for providing performance feedback on a regular basis.
+
+
+Data Architecture:
+
+
+Support data architecture, data engineering, DBA, and data integration specialists.
+Ensure the enterprise data supports current and future reporting and analytics requirements.
+Perform data modeling to support architecture and designs.
+Define data to facilitate easier integration and effective retrieval for internal applications and external communication.
+Design and maintain master data and transaction data management.
+
+
+Planning & Solution Delivery:
+
+
+Work with department managers and IT project management to define the scope and schedule for data integration solutions.
+Proactively monitor delivery risks and issues.
+Strive to deliver work packages on schedule and within budget.
+Contribute to the overall application development team plan.
+
+
+
+
+Data Transformations/Transfer (ETL):
+
+
+Manage enterprise applications interfaces and data integration.
+Handle cloud integrations, CSV file delivery, data delivery, and system data integration.
+
+
+
+
+Data and Integration Architecture:
+
+
+Create best-in-class solutions using Microsoft SQL Server Integration Services (SSIS) and APIs.
+Integrate data from various hosted and on-premises enterprise solutions into the internal environment for data warehousing, reporting, and analytics.
+Implement and administer databases, including SQL Server administration, installation, backups, and restores.
+
+
+
+
+Governance:
+
+
+Collaborate with subject matter experts to build solutions using approved calculations and data elements.
+Emphasize proper data governance.
+
+
+Risk & Compliance:
+
+
+Ensure all BI solutions comply with Cherry Bekaerts security, data privacy, and other risk and compliance policies, procedures, and controls.
+
+
+Experience Required - 7 to 10 Years
+
+
+
+Skills Required-
+
+Strong managerial skills
+Proficiency with SQL/SQL Server Management Studio (SSMS) and Python.
+Experience with ETL processes and development.
+Strong analytical and problem-solving skills.
+Excellent communication and collaboration abilities.
+Ability to work independently and as part of a team.
+Proactive in monitoring and addressing delivery risks and issues.
+Expertise in data modeling and architecture.This role is pivotal in driving the planning, modeling, building, and management of our BI and analytics solutions as we continue to grow. The Senior Data Engineer will work independently on analytics development while collaborating with executive team members and business leaders in Operations, People & Culture, Finance, and Marketing. The primary purpose of this role is to deliver effective and visually appealing reports and dashboards that empower decision-making across the organization.
+
+
+
+Role & responsibilities-
+
+Provides leadership to team including coaching, mentoring and professional development or oversight to a department. Responsible for providing performance feedback on a regular basis.
+
+
+Data Architecture:
+
+
+Support data architecture, data engineering, DBA, and data integration specialists.
+Ensure the enterprise data supports current and future reporting and analytics requirements.
+Perform data modeling to support architecture and designs.
+Define data to facilitate easier integration and effective retrieval for internal applications and external communication.
+Design and maintain master data and transaction data management.
+
+
+Planning & Solution Delivery:
+
+
+Work with department managers and IT project management to define the scope and schedule for data integration solutions.
+Proactively monitor delivery risks and issues.
+Strive to deliver work packages on schedule and within budget.
+Contribute to the overall application development team plan.
+
+
+
+
+Data Transformations/Transfer (ETL):
+
+
+Manage enterprise applications interfaces and data integration.
+Handle cloud integrations, CSV file delivery, data delivery, and system data integration.
+
+
+
+
+Data and Integration Architecture:
+
+
+Create best-in-class solutions using Microsoft SQL Server Integration Services (SSIS) and APIs.
+Integrate data from various hosted and on-premises enterprise solutions into the internal environment for data warehousing, reporting, and analytics.
+Implement and administer databases, including SQL Server administration, installation, backups, and restores.
+
+
+
+
+Governance:
+
+
+Collaborate with subject matter experts to build solutions using approved calculations and data elements.
+Emphasize proper data governance.
+
+
+Risk & Compliance:
+
+
+Ensure all BI solutions comply with Cherry Bekaerts security, data privacy, and other risk and compliance policies, procedures, and controls.
+
+
+Experience Required - 7 to 10 Years
+
+
+
+Skills Required-
+
+Strong managerial skills
+Proficiency with SQL/SQL Server Management Studio (SSMS) and Python.
+Experience with ETL processes and development.
+Strong analytical and problem-solving skills.
+Excellent communication and collaboration abilities.
+Ability to work independently and as part of a team.
+Proactive in monitoring and addressing delivery risks and issues.
+Expertise in data modeling and architecture.

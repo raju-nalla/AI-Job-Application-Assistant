@@ -13,7 +13,7 @@ Author: Raju Nalla
 """
 
 import re
-
+from modules.resume_optimizer import ResumeOptimizer
 from modules.file_reader import FileReader
 from modules.logger import get_logger
 

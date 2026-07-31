@@ -1,12 +1,12 @@
 """
-openai_client.py
+ai_client.py
 
-Centralized OpenAI Client
+Centralized AI Client
 
 Responsibilities:
 - Load API key from .env
 - Load AI configuration
-- Initialize OpenAI client
+- Initialize AI client
 - Send prompts
 - Handle retries
 - Handle exceptions
@@ -22,18 +22,17 @@ import os
 import time
 
 from modules.logger import get_logger
-from config.config_loader import ConfigLoader
+from config import config
 
 logger = get_logger(__name__)
 
 load_dotenv()
 
 
-class OpenAIClient:
+class AIClient:
 
     def __init__(self):
 
-        config = ConfigLoader()
 
         self.api_key = os.getenv("OPENROUTER_API_KEY")
 
@@ -51,17 +50,18 @@ class OpenAIClient:
         self.max_retries = config.get("ai.max_retries")
 
         self.client = OpenAI(
-            api_key=os.getenv("OPENROUTER_API_KEY"),
-            base_url="https://openrouter.ai/api/v1"
+            api_key=self.api_key,
+            base_url="https://openrouter.ai/api/v1",
+            timeout=self.timeout,
+            max_retries=self.max_retries,
         )
-
         logger.info(
-            f"OpenAI Client initialized using model '{self.model}'."
+            f"AI Client initialized using model '{self.model}'."
         )
 
     def generate(self, prompt: str) -> str:
 
-        logger.info("Sending prompt to OpenAI...")
+        logger.info("Sending prompt to AI...")
 
         start = time.time()
 
@@ -70,14 +70,13 @@ class OpenAIClient:
             response = self.client.responses.create(
                 model=self.model,
                 input=prompt,
-                temperature=self.temperature,
                 max_output_tokens=self.max_completion_tokens
             )
 
             elapsed = round(time.time() - start, 2)
 
             logger.info(
-                f"OpenAI response received in {elapsed} seconds."
+                f"AI response received in {elapsed} seconds."
             )
 
             return response.output_text
@@ -85,9 +84,9 @@ class OpenAIClient:
         except Exception as ex:
 
             logger.exception(
-                "OpenAI request failed."
+                "AI request failed."
             )
 
             raise RuntimeError(
-                f"OpenAI API Error: {ex}"
+                f"AI API Error: {ex}"
             ) from ex

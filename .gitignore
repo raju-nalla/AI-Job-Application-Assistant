@@ -32,7 +32,12 @@ logs/
 # Generated Files
 # ==========================================
 data/generated/
-reports/
+
+reports/*.txt
+reports/*.md
+
+# Keep folder structure
+!reports/.gitkeep
 
 # ==========================================
 # Python Cache

@@ -1,58 +1,87 @@
 # 🤖 AI Job Application Assistant
 
-An enterprise-grade AI-powered application that helps job seekers optimize resumes, improve ATS scores, generate cover letters, and prepare for interviews using Large Language Models (LLMs).
+An enterprise-grade AI-powered application that helps job seekers analyze resumes, evaluate ATS compatibility, optimize resumes using Large Language Models (LLMs), and automate the job application process.
 
-Built with a modular, production-ready architecture following Software Development Life Cycle (SDLC) and Agile methodologies.
+Built using a modular, production-ready architecture following Software Development Life Cycle (SDLC), Clean Code principles, and Agile methodologies.
 
 ---
 
-## 🚀 Features
+# 🚀 Features
 
-### ✅ Resume Parsing
-- Extracts text from PDF and DOCX resumes
-- Structured resume processing
+## ✅ Resume Parsing
+- Extracts text from PDF, DOCX, and TXT resumes
+- Parses candidate information
+- Returns structured resume data
 
-### ✅ Job Description Parsing
-- Reads and analyzes job descriptions
-- Extracts required skills and technologies
+---
 
-### ✅ Skill Extraction
-- Detects technical skills using configurable skill dictionaries
-- Supports Azure, Snowflake, Databricks, Python, SQL, Spark, and more
+## ✅ Job Description Parsing
+- Reads job descriptions from TXT, PDF, and DOCX
+- Extracts job title, company, and experience
+- Returns structured job description data
 
-### ✅ ATS Score Engine
-- Calculates ATS compatibility score
+---
+
+## ✅ Skill Extraction
+- Detects technical skills using a centralized `skills.json`
+- Supports aliases for accurate matching
+- Configurable skill repository
+- Supports Azure, Snowflake, Databricks, PySpark, SQL, Python, SSIS, Power BI, and more
+
+---
+
+## ✅ ATS Matching Engine
+- Calculates Overall ATS Score
+- Category-wise scoring
 - Skill matching analysis
 - Missing skills identification
-- Category-wise scoring
-- Recommendations for improvement
+- Extra skills detection
+- Strength & weakness analysis
+- Intelligent recommendations
 
-### ✅ ATS Report Generator
-- Generates detailed ATS reports
-- Highlights strengths and weaknesses
-- Saves reports locally
+---
 
-### ✅ Prompt Builder
+## ✅ ATS Report Generator
+- Generates formatted ATS reports
+- Displays strengths and weaknesses
+- Highlights missing skills
+- Saves reports automatically
+
+---
+
+## ✅ Prompt Builder
 - Uses reusable prompt templates
 - Dynamic placeholder replacement
-- Easy prompt customization
+- Centralized prompt management
 
-### ✅ AI Client
-- Centralized AI integration
-- OpenRouter support
+---
+
+## ✅ AI Client
+- OpenRouter API integration
 - Configurable LLM model
 - Retry mechanism
-- Logging
+- Timeout handling
+- Centralized logging
 - Environment-based configuration
 
 ---
 
-## 🚧 Upcoming Features
+## ✅ AI Resume Optimizer
+- Generates ATS-optimized resumes using LLMs
+- Uses Resume + Job Description + ATS Report
+- Preserves factual accuracy
+- Improves resume wording for ATS compatibility
+- Saves optimized resume in Markdown format
 
-- AI Resume Optimizer
-- Cover Letter Generator
+---
+
+# 🚧 Upcoming Features
+
+- AI Cover Letter Generator
 - Interview Question Generator
+- Interview Answer Evaluator
 - Career Coach
+- Resume Comparison
 - Job Tracker
 - Streamlit Web Application
 - Recruiter Dashboard
@@ -66,25 +95,33 @@ AI-Job-Application-Assistant/
 
 │
 ├── config/
-│   ├── settings.yaml
-│   └── config_loader.py
+│   ├── __init__.py
+│   ├── config_loader.py
+│   └── settings.yaml
 │
 ├── data/
 │   ├── database/
 │   ├── generated/
-│   └── samples/
+│   ├── job_descriptions/
+│   ├── resumes/
+│   ├── sample_outputs/
+│   └── skills/
+│       └── skills.json
+│
+├── logs/
 │
 ├── modules/
-│   ├── logger.py
-│   ├── database.py
-│   ├── file_reader.py
-│   ├── resume_parser.py
-│   ├── job_description_parser.py
-│   ├── skill_extractor.py
+│   ├── ai_client.py
 │   ├── ats_engine.py
 │   ├── ats_report_generator.py
+│   ├── database.py
+│   ├── file_reader.py
+│   ├── job_description_parser.py
+│   ├── logger.py
 │   ├── prompt_builder.py
-│   └── openai_client.py
+│   ├── resume_optimizer.py
+│   ├── resume_parser.py
+│   └── skill_extractor.py
 │
 ├── prompts/
 │   ├── resume_optimizer_prompt.txt
@@ -94,16 +131,14 @@ AI-Job-Application-Assistant/
 │
 ├── reports/
 │
-├── tracker/
-│
 ├── tests/
 │
-├── logs/
+├── tracker/
 │
-├── app.py
 ├── requirements.txt
 ├── README.md
-└── .env.example
+├── .env.example
+└── app.py
 ```
 
 ---
@@ -114,52 +149,70 @@ AI-Job-Application-Assistant/
 |----------|--------------|
 | Language | Python 3.11+ |
 | AI | OpenRouter |
-| LLM | GPT OSS 20B Free |
+| LLM | GPT-OSS-20B |
 | Configuration | YAML |
-| Environment | dotenv |
+| Environment | python-dotenv |
 | Database | SQLite |
-| Parsing | PyPDF2, python-docx |
+| Parsing | pdfplumber, python-docx |
 | Logging | Python Logging |
 | Architecture | Modular |
 | Development | SDLC + Agile |
 
 ---
 
-# 🏗 Architecture
+# 🏗️ Architecture
 
 ```text
-Resume
-      │
-      ▼
-Resume Parser
-      │
-      ▼
+                Resume
+                   │
+                   ▼
+            Resume Parser
+                   │
+                   ▼
+           Skill Extractor
+                   │
+                   ▼
+         Resume Skills Dictionary
+                   │
+                   │
+Job Description ───┘
+       │
+       ▼
+Job Description Parser
+       │
+       ▼
 Skill Extractor
-      │
-      ▼
-ATS Engine
-      │
-      ▼
-ATS Report
-      │
-      ▼
-Prompt Builder
-      │
-      ▼
-AI Client
-      │
-      ▼
-Large Language Model
-      │
-      ▼
-Optimized Resume
+       │
+       ▼
+JD Skills Dictionary
+       │
+       ▼
+        ATS Matching Engine
+               │
+               ▼
+      ATS Report Generator
+               │
+               ▼
+        ATS Analysis Report
+               │
+               ▼
+         Prompt Builder
+               │
+               ▼
+            AI Client
+               │
+               ▼
+      Large Language Model
+               │
+               ▼
+     Optimized Resume (.md)
 ```
 
 ---
 
 # ⚙️ Configuration
 
-All application settings are managed through:
+Application settings are managed through:
 
 ```text
 config/settings.yaml
@@ -183,35 +236,32 @@ ai:
 Create a `.env` file:
 
 ```env
-OPENAI_API_KEY=your_api_key
+OPENROUTER_API_KEY=your_openrouter_api_key
 ```
-
-> If using OpenRouter, store your OpenRouter API key and configure the client accordingly.
 
 ---
 
 # 🧪 Running Tests
 
+Run individual module tests:
+
 ```bash
-python test_logger.py
+python -m tests.test_logger
+python -m tests.test_database
+python -m tests.test_file_reader
+python -m tests.test_resume_parser
+python -m tests.test_job_description_parser
+python -m tests.test_skill_extractor
+python -m tests.test_ats_engine
+python -m tests.test_ats_report_generator
+python -m tests.test_prompt_builder
+python -m tests.test_resume_optimizer
+```
 
-python test_database.py
+Run the complete end-to-end pipeline:
 
-python test_file_reader.py
-
-python test_resume_parser.py
-
-python test_job_description_parser.py
-
-python test_ats_engine.py
-
-python test_ats_report_generator.py
-
-python test_config_loader.py
-
-python test_prompt_builder.py
-
-python test_openai_client.py
+```bash
+python -m tests.test_resume_pipeline
 ```
 
 ---
@@ -224,31 +274,28 @@ python test_openai_client.py
 | Sprint 2 | ✅ Completed |
 | Sprint 3 | ✅ Completed |
 | Sprint 4 | ✅ Completed |
-| Sprint 5 | 🚧 In Progress |
+| Sprint 5 | ✅ Completed |
 
-Completed in Sprint 5:
+### Sprint 5 Deliverables
 
-- Prompt Templates
-- Prompt Builder
-- Configuration Loader
-- AI Client (OpenRouter)
-
-Upcoming:
-
-- Resume Optimizer
-- Cover Letter Generator
-- Interview Coach
+- ✅ Prompt Builder
+- ✅ Configuration Loader
+- ✅ AI Client (OpenRouter)
+- ✅ Resume Optimizer
+- ✅ ATS Report Generation
+- ✅ End-to-End Resume Optimization Pipeline
 
 ---
 
 # 🎯 Project Goals
 
 - Improve ATS scores using AI
-- Automate resume customization
+- Automate resume optimization
 - Generate personalized cover letters
 - Prepare candidates for interviews
-- Provide career guidance
+- Provide AI-powered career guidance
 - Track job applications
+- Build a complete AI Job Application Assistant
 
 ---
 
@@ -258,14 +305,12 @@ Upcoming:
 
 Azure Data Engineer
 
-GitHub: https://github.com/raju-nalla
-
-Portfolio: https://raju-nalla.github.io/
-
-LinkedIn: https://www.linkedin.com/in/raju-nalla
+- GitHub: https://github.com/raju-nalla
+- Portfolio: https://raju-nalla.github.io/
+- LinkedIn: https://www.linkedin.com/in/raju-nalla
 
 ---
 
-# ⭐ If you found this project useful
+# ⭐ Support
 
-Please consider giving the repository a ⭐ on GitHub.
+If you found this project useful, please consider giving the repository a ⭐ on GitHub.
