@@ -75,9 +75,17 @@ Built using a modular, production-ready architecture following Software Developm
 
 ---
 
+## ✅ AI Cover Letter Generator
+- Generates personalized cover letters using AI
+- Tailors content to the job description
+- Uses candidate resume for personalization
+- Preserves factual accuracy
+- Saves output in Markdown format
+
+---
+
 # 🚧 Upcoming Features
 
-- AI Cover Letter Generator
 - Interview Question Generator
 - Interview Answer Evaluator
 - Career Coach
@@ -120,6 +128,7 @@ AI-Job-Application-Assistant/
 │   ├── logger.py
 │   ├── prompt_builder.py
 │   ├── resume_optimizer.py
+|   ├── cover_letter_generator.py
 │   ├── resume_parser.py
 │   └── skill_extractor.py
 │
@@ -256,6 +265,7 @@ python -m tests.test_ats_engine
 python -m tests.test_ats_report_generator
 python -m tests.test_prompt_builder
 python -m tests.test_resume_optimizer
+python -m test_cover_letter_generator.py
 ```
 
 Run the complete end-to-end pipeline:
@@ -275,15 +285,22 @@ python -m tests.test_resume_pipeline
 | Sprint 3 | ✅ Completed |
 | Sprint 4 | ✅ Completed |
 | Sprint 5 | ✅ Completed |
+| Sprint 6 | 🚧 In Progress |
 
-### Sprint 5 Deliverables
+|----------|--------|
+| Sprint 1 | ✅ Completed |
+| Sprint 2 | ✅ Completed |
+| Sprint 3 | ✅ Completed |
+| Sprint 4 | ✅ Completed |
+| Sprint 5 | ✅ Completed |
 
-- ✅ Prompt Builder
-- ✅ Configuration Loader
-- ✅ AI Client (OpenRouter)
-- ✅ Resume Optimizer
-- ✅ ATS Report Generation
-- ✅ End-to-End Resume Optimization Pipeline
+### Sprint 6 Deliverables
+
+- ✅ AI Cover Letter Generator
+- ⏳ Interview Question Generator
+- ⏳ Interview Answer Evaluator
+- ⏳ Career Coach
+- ⏳ Resume Comparison
 
 ---
 

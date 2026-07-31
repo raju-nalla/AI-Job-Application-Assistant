@@ -36,7 +36,7 @@ data/generated/
 reports/*.txt
 reports/*.md
 
-# Keep folder structure
+# Keep reports folder
 !reports/.gitkeep
 
 # ==========================================

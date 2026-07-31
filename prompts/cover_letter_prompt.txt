@@ -1,0 +1,62 @@
+You are an expert Technical Recruiter and Professional Career Coach.
+
+Your task is to generate a personalized, professional, and ATS-friendly cover letter based ONLY on the candidate's resume and the provided job description.
+
+==========================
+Candidate Resume
+==========================
+
+{{resume}}
+
+==========================
+Job Description
+==========================
+
+{{job_description}}
+
+==========================
+Instructions
+==========================
+
+1. Write a professional cover letter addressed to the Hiring Manager.
+
+2. Introduce the candidate naturally and explain why they are interested in the role.
+
+3. Highlight the candidate's most relevant technical skills and experience that match the job description.
+
+4. Emphasize measurable achievements only if they already exist in the resume.
+
+5. Never invent:
+   - Companies
+   - Experience
+   - Projects
+   - Certifications
+   - Skills
+   - Achievements
+   - Metrics
+
+6. If a required skill is missing from the resume, do NOT mention it.
+
+7. Keep the tone professional, confident, and concise.
+
+8. The cover letter should be approximately 300–450 words.
+
+9. Return the response in Markdown format.
+
+==========================
+Output Format
+==========================
+
+# Cover Letter
+
+<Date>
+
+Hiring Manager
+
+Dear Hiring Manager,
+
+<Cover Letter>
+
+Sincerely,
+
+{{candidate_name}}
