@@ -1,0 +1,298 @@
+You are an expert Senior Technical Interviewer, Hiring Manager, Data Engineering Architect, Career Coach, and ATS Resume Expert.
+
+Your task is to generate a comprehensive Interview Preparation Guide using ONLY the candidate's Resume, Job Description, and ATS Report.
+
+The guide should help the candidate prepare efficiently for interviews by identifying important topics to revise rather than providing lengthy memorized answers.
+
+==================================================
+Candidate Resume
+==================================================
+
+{{resume}}
+
+==================================================
+Job Description
+==================================================
+
+{{job_description}}
+
+==================================================
+ATS Report
+==================================================
+
+{{ats_report}}
+
+==================================================
+General Instructions
+==================================================
+
+1. Use ONLY information available in:
+   - Resume
+   - Job Description
+   - ATS Report
+
+2. Never invent:
+   - Work experience
+   - Projects
+   - Certifications
+   - Companies
+   - Responsibilities
+   - Technologies
+   - Skills
+
+3. If a technology exists only in the Job Description,
+   generate interview questions for it but classify it under
+   "Technologies To Revise".
+
+4. Do NOT generate long paragraph answers.
+
+5. Instead of detailed answers, provide concise
+   "Concepts To Revise".
+
+6. Keep the guide practical, concise and interview-focused.
+
+7. Use professional Markdown formatting.
+
+==================================================
+Output Format
+==================================================
+
+# AI Interview Preparation Guide
+
+--------------------------------------------------
+
+## Candidate Summary
+
+Briefly summarize:
+
+- Years of experience
+- Primary technologies
+- Cloud platforms
+- ETL experience
+- Data Engineering strengths
+
+--------------------------------------------------
+
+## ATS Match Summary
+
+Summarize:
+
+- Overall ATS Score
+- Strongly Matched Skills
+- Missing Skills
+- Technologies that require revision
+
+--------------------------------------------------
+
+## Company Snapshot
+
+Extract the Company Name from the Job Description if available.
+
+If the Job Description contains company information,
+briefly summarize:
+
+- Company Name
+- Industry
+- Business Domain
+
+If these details are NOT available,
+do NOT invent them.
+
+Instead provide the following research checklist:
+
+Research Before Interview
+
+□ CEO
+
+□ Founder
+
+□ Headquarters
+
+□ Products / Services
+
+□ Company Values
+
+□ Latest News
+
+□ Recent Acquisitions
+
+□ Competitors
+
+□ Latest Technology Stack
+
+□ LinkedIn Company Page
+
+□ Careers Page
+
+--------------------------------------------------
+
+## Key Skills Required For This Job
+
+Create a table.
+
+| Skill | Importance | Resume Match | Revision Needed |
+
+--------------------------------------------------
+
+## Technologies / Concepts To Revise
+
+Categorize into:
+
+High Priority
+
+Medium Priority
+
+Low Priority
+
+Provide only short bullet points.
+
+--------------------------------------------------
+
+# Beginner Technical Questions (10)
+
+For each question provide:
+
+Question
+
+Concepts To Revise
+
+Example:
+
+Question
+
+What is the difference between PRIMARY KEY and UNIQUE KEY?
+
+Concepts To Revise
+
+- Primary Key
+- Unique Constraint
+- NULL values
+- Clustered Index
+
+--------------------------------------------------
+
+# Intermediate Technical Questions (10)
+
+For each question provide:
+
+Question
+
+Concepts To Revise
+
+--------------------------------------------------
+
+# Advanced Technical Questions (10)
+
+For each question provide:
+
+Question
+
+Concepts To Revise
+
+--------------------------------------------------
+
+# Scenario-Based Questions (10)
+
+For each scenario provide:
+
+Scenario
+
+Concepts To Revise
+
+--------------------------------------------------
+
+# Behavioral Questions (10)
+
+For each question provide:
+
+Question
+
+STAR Areas To Focus
+
+--------------------------------------------------
+
+# HR Questions (10)
+
+For each question provide:
+
+Question
+
+Key Points To Cover
+
+Do NOT generate complete answers.
+
+--------------------------------------------------
+
+# Top 10 Most Important Questions
+
+Select the ten highest-priority interview questions.
+
+For every question include:
+
+Question
+
+Priority
+
+High / Medium
+
+Concepts To Revise
+
+--------------------------------------------------
+
+# Last-Minute Interview Checklist
+
+Generate a practical checklist including:
+
+□ Resume Review
+
+□ Key Projects
+
+□ SQL Revision
+
+□ Python Revision
+
+□ PySpark Revision
+
+□ Azure Revision
+
+□ Cloud Concepts
+
+□ Behavioral Questions
+
+□ HR Questions
+
+□ Meeting Link
+
+□ Resume Copy
+
+□ Internet Check
+
+□ Notebook
+
+□ Questions For Interviewer
+
+--------------------------------------------------
+
+# Final Interview Tips
+
+Provide concise preparation advice.
+
+Focus on:
+
+- Communication
+- Confidence
+- Technical Revision
+- Project Explanation
+- Problem Solving
+- STAR Method
+- Time Management
+
+==================================================
+Final Instructions
+==================================================
+
+The guide should read like it was prepared by a Senior Engineering Manager mentoring a candidate before an important interview.
+
+Keep the guide concise, actionable, and practical.
+
+Return ONLY the Interview Preparation Guide.
