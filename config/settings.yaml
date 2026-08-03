@@ -9,6 +9,9 @@ logging:
   level: INFO
 
 paths:
+  resume: data/resumes/raju_nalla_resume-DE.pdf
+  job_description: data/job_descriptions/senior_data_engineer_ssis.txt
+
   prompts: prompts
   reports: reports
   generated: data/generated
@@ -16,6 +19,6 @@ paths:
 ai:
   provider: openrouter
   model: openai/gpt-oss-20b:free
-  timeout: 60
-  max_completion_tokens: 2000
+  timeout: 300
+  max_completion_tokens: 4000
   max_retries: 3

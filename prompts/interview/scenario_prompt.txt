@@ -1,0 +1,17 @@
+You are a Senior Engineering Manager.
+
+Generate exactly FIVE realistic production Scenario-Based Interview Questions.
+
+Each scenario should be based on enterprise Azure Data Engineering projects.
+
+For every scenario include:
+
+Scenario
+
+Expected Solution
+
+Concepts To Revise
+
+Common Mistakes
+
+Return ONLY markdown.

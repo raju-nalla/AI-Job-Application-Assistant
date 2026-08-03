@@ -4,7 +4,7 @@ cover_letter_generator.py
 AI Cover Letter Generator
 
 Responsibilities:
-- Generate personalized cover letter
+- Generate a personalized cover letter.
 
 Author: Raju Nalla
 """
@@ -18,27 +18,16 @@ class CoverLetterGenerator(BaseAIGenerator):
     """
 
     TEMPLATE_NAME = "cover_letter/cover_letter_prompt.txt"
-
     OUTPUT_FILE = "cover_letter.md"
-
     LOG_NAME = "Cover Letter"
 
-    def generate(
-        self,
-        resume_text: str,
-        job_description: str,
-        candidate_name: str,
-    ) -> str:
+    def generate(self, context: dict) -> str:
         """
-        Generate cover letter.
+        Generate a personalized cover letter using the shared context.
         """
-
-        prompt_values = {
-            "resume": resume_text,
-            "job_description": job_description,
-            "candidate_name": candidate_name,
-        }
 
         return self.generate_document(
-            prompt_values
+            template_name=self.TEMPLATE_NAME,
+            prompt_values=context,
+            output_file=self.OUTPUT_FILE,
         )

@@ -47,33 +47,11 @@ class BaseAIGenerator:
 
         self.output_directory.mkdir(
             parents=True,
-            exist_ok=True
+            exist_ok=True,
         )
 
     # ==========================================================
-    # Existing API (Backward Compatible)
-    # ==========================================================
-
-    def generate_document(
-        self,
-        prompt_values: dict,
-    ) -> str:
-        """
-        Generate document using the class template.
-        """
-
-        response = self.generate_content(
-            self.TEMPLATE_NAME,
-            prompt_values,
-        )
-
-        return self.save_document(
-            response,
-            self.OUTPUT_FILE,
-        )
-
-    # ==========================================================
-    # New API
+    # Generate AI Content
     # ==========================================================
 
     def generate_content(
@@ -82,27 +60,49 @@ class BaseAIGenerator:
         prompt_values: dict,
     ) -> str:
         """
-        Generate AI content using any prompt template.
+        Build the prompt and send it to the AI model.
         """
 
         logger.info(
-            f"Generating prompt: {template_name}"
+            f"Building prompt: {template_name}"
         )
 
         prompt = self.prompt_builder.build_prompt(
-            template_name,
-            prompt_values,
+            template_name=template_name,
+            prompt_values=prompt_values,
         )
 
-        logger.info(
-            "Sending prompt to AI..."
+        logger.info("Sending prompt to AI...")
+
+        return self.ai_client.generate(prompt)
+
+    # ==========================================================
+    # Generate Complete Document
+    # ==========================================================
+
+    def generate_document(
+        self,
+        template_name: str,
+        prompt_values: dict,
+        output_file: str,
+    ) -> str:
+        """
+        Generate AI content and save it as a document.
+        """
+
+        content = self.generate_content(
+            template_name=template_name,
+            prompt_values=prompt_values,
         )
 
-        response = self.ai_client.generate(
-            prompt
+        return self.save_document(
+            content=content,
+            output_filename=output_file,
         )
 
-        return response
+    # ==========================================================
+    # Save Document
+    # ==========================================================
 
     def save_document(
         self,
@@ -110,21 +110,18 @@ class BaseAIGenerator:
         output_filename: str,
     ) -> str:
         """
-        Save generated content.
+        Save generated content into the reports folder.
         """
 
-        output_file = (
-            self.output_directory /
-            output_filename
-        )
+        output_path = self.output_directory / output_filename
 
-        output_file.write_text(
+        output_path.write_text(
             content,
             encoding="utf-8",
         )
 
         logger.info(
-            f"Saved: {output_file}"
+            f"Saved report: {output_path}"
         )
 
-        return str(output_file)
+        return str(output_path)

@@ -1,0 +1,101 @@
+You are an Interview Preparation Coach.
+
+Generate a complete interview checklist customized for the candidate.
+
+==================================================
+Candidate Resume
+==================================================
+
+{{resume}}
+
+==================================================
+Job Description
+==================================================
+
+{{job_description}}
+
+==================================================
+ATS Report
+==================================================
+
+{{ats_report}}
+
+==================================================
+Instructions
+==================================================
+
+Generate a practical checklist under the following categories.
+
+Resume
+
+LinkedIn
+
+GitHub Portfolio
+
+Projects
+
+Technical Concepts
+
+Coding Practice
+
+Behavioral Stories
+
+Company Research
+
+Interview Setup
+
+Documents to Carry
+
+Last Minute Tips
+
+Each checklist item should be short.
+
+Use Markdown checkboxes.
+
+Return ONLY Markdown.
+
+==================================================
+Output Format
+==================================================
+
+# Interview Preparation Checklist
+
+## Resume
+
+- [ ]
+
+## LinkedIn
+
+- [ ]
+
+## GitHub
+
+- [ ]
+
+## Projects
+
+- [ ]
+
+## Technical Concepts
+
+- [ ]
+
+## Behavioral Stories
+
+- [ ]
+
+## Company Research
+
+- [ ]
+
+## Interview Setup
+
+- [ ]
+
+## Documents
+
+- [ ]
+
+## Last Minute Tips
+
+- [ ]

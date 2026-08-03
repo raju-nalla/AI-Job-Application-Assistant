@@ -4,7 +4,7 @@ resume_optimizer.py
 AI Resume Optimizer
 
 Responsibilities:
-- Generate optimized resume
+- Generate an ATS-optimized resume tailored to a job description.
 
 Author: Raju Nalla
 """
@@ -18,27 +18,16 @@ class ResumeOptimizer(BaseAIGenerator):
     """
 
     TEMPLATE_NAME = "resume/resume_optimizer_prompt.txt"
-
     OUTPUT_FILE = "optimized_resume.md"
-
     LOG_NAME = "Resume Optimizer"
 
-    def optimize(
-        self,
-        resume_text: str,
-        job_description: str,
-        ats_report: str,
-    ) -> str:
+    def generate(self, context: dict) -> str:
         """
-        Generate optimized resume.
+        Generate an optimized resume using the shared context.
         """
-
-        prompt_values = {
-            "resume": resume_text,
-            "job_description": job_description,
-            "ats_report": ats_report,
-        }
 
         return self.generate_document(
-            prompt_values
+            template_name=self.TEMPLATE_NAME,
+            prompt_values=context,
+            output_file=self.OUTPUT_FILE,
         )

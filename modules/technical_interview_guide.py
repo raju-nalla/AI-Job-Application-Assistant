@@ -1,36 +1,68 @@
 """
 technical_interview_guide.py
 
-Generates a Technical Interview Guide.
+Generates the complete Technical Interview Guide.
 
 Author: Raju Nalla
 """
 
 from modules.base_ai_generator import BaseAIGenerator
+from modules.logger import get_logger
+
+logger = get_logger(__name__)
 
 
 class TechnicalInterviewGuide(BaseAIGenerator):
-    """
-    Generates technical interview preparation questions.
-    """
-
-    TEMPLATE_NAME = "interview/technical_interview_prompt.txt"
 
     OUTPUT_FILE = "technical_interview_guide.md"
 
-    LOG_NAME = "Technical Interview Guide"
+    SECTIONS = [
 
-    def generate(
-        self,
-        resume_text: str,
-        job_description: str,
-        ats_report: str,
-    ) -> str:
+        (
+            "interview/beginner_prompt.txt",
+            "Beginner Technical Questions",
+        ),
 
-        prompt_values = {
-            "resume": resume_text,
-            "job_description": job_description,
-            "ats_report": ats_report,
-        }
+        (
+            "interview/intermediate_prompt.txt",
+            "Intermediate Technical Questions",
+        ),
 
-        return self.generate_document(prompt_values)
+        (
+            "interview/advanced_prompt.txt",
+            "Advanced Technical Questions",
+        ),
+
+        (
+            "interview/scenario_prompt.txt",
+            "Scenario-Based Questions",
+        ),
+
+        (
+            "interview/top10_prompt.txt",
+            "Top 10 Most Important Interview Questions",
+        ),
+
+    ]
+
+    def generate(self, context: dict):
+
+        report = "# Technical Interview Guide\n\n"
+
+        for template_name, section_title in self.SECTIONS:
+
+            logger.info(f"Generating {section_title}...")
+
+            report += f"\n---\n\n# {section_title}\n\n"
+
+            report += self.generate_content(
+                template_name=template_name,
+                prompt_values=context,
+            )
+
+            report += "\n\n"
+
+        return self.save_document(
+            content=report,
+            output_filename=self.OUTPUT_FILE,
+        )

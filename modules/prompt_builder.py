@@ -28,59 +28,79 @@ class PromptBuilder:
     def __init__(self, prompt_directory="prompts"):
         self.prompt_directory = Path(prompt_directory)
 
-    def load_template(self, template_name: str) -> str:
-        """
-        Load a prompt template.
-        """
+    # ==========================================================
+    # Load Template
+    # ==========================================================
+
+    def load_template(
+        self,
+        template_name: str,
+    ) -> str:
 
         template_path = self.prompt_directory / template_name
 
         if not template_path.exists():
-            logger.error(f"Template not found: {template_path}")
+
+            logger.error(
+                f"Template not found: {template_path}"
+            )
+
             raise FileNotFoundError(
                 f"Prompt template '{template_name}' not found."
             )
 
-        logger.info(f"Loading prompt template: {template_name}")
+        logger.info(
+            f"Loading prompt template: {template_name}"
+        )
 
         return template_path.read_text(
             encoding="utf-8"
         )
 
-    def get_placeholders(self, template: str) -> list[str]:
-        """
-        Return placeholders found in template.
+    # ==========================================================
+    # Find Placeholders
+    # ==========================================================
 
-        Example:
-        {{resume}}
-        {{job_description}}
-        """
+    def get_placeholders(
+        self,
+        template: str,
+    ) -> list[str]:
 
         return re.findall(
             r"\{\{(.*?)\}\}",
+            template,
+        )
+
+    # ==========================================================
+    # Build Prompt
+    # ==========================================================
+
+    def build_prompt(
+        self,
+        template_name: str,
+        prompt_values: dict,
+    ) -> str:
+
+        template = self.load_template(
+            template_name
+        )
+
+        placeholders = self.get_placeholders(
             template
         )
 
-    def build_prompt(
-    self,
-    template_name: str,
-    values: dict[str, str]
-    ) -> str:
-        """
-        Build final prompt.
-        """
-
-        template = self.load_template(template_name)
-
-        placeholders = self.get_placeholders(template)
-
         missing = [
+
             field
+
             for field in placeholders
-            if field not in values
+
+            if field not in prompt_values
+
         ]
 
         if missing:
+
             logger.error(
                 f"Missing placeholders: {missing}"
             )
@@ -91,12 +111,15 @@ class PromptBuilder:
 
         prompt = template
 
-        for key, value in values.items():
+        for key, value in prompt_values.items():
+
             prompt = prompt.replace(
                 f"{{{{{key}}}}}",
-                str(value)
+                str(value),
             )
 
-        logger.info("Prompt generated successfully.")
+        logger.info(
+            "Prompt generated successfully."
+        )
 
         return prompt

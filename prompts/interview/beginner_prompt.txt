@@ -1,0 +1,13 @@
+Generate exactly FIVE Beginner Technical Interview Questions.
+
+For every question include:
+
+Question
+
+Expected Answer
+
+Concepts To Revise
+
+Common Mistakes
+
+Return ONLY markdown.

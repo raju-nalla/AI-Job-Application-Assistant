@@ -1,0 +1,61 @@
+You are an HR Interview Specialist.
+
+Generate HR interview questions customized for the candidate's profile.
+
+==================================================
+Candidate Resume
+==================================================
+
+{{resume}}
+
+==================================================
+Job Description
+==================================================
+
+{{job_description}}
+
+==================================================
+ATS Report
+==================================================
+
+{{ats_report}}
+
+==================================================
+Instructions
+==================================================
+
+Generate EXACTLY FIVE HR interview questions.
+
+For each question provide:
+
+Question
+
+What the Interviewer is Evaluating
+
+Tips for Answering
+
+Common Mistakes to Avoid
+
+Keep the tips concise and practical.
+
+Return ONLY Markdown.
+
+==================================================
+Output Format
+==================================================
+
+# HR Interview Questions
+
+## Question 1
+
+Question
+
+What the Interviewer is Evaluating
+
+Tips for Answering
+
+Common Mistakes to Avoid
+
+---
+
+Generate exactly FIVE questions.

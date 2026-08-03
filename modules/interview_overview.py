@@ -15,22 +15,16 @@ class InterviewOverview(BaseAIGenerator):
     """
 
     TEMPLATE_NAME = "interview/interview_overview_prompt.txt"
-
     OUTPUT_FILE = "interview_overview.md"
-
     LOG_NAME = "Interview Overview"
 
-    def generate(
-        self,
-        resume_text: str,
-        job_description: str,
-        ats_report: str,
-    ) -> str:
+    def generate(self, context: dict) -> str:
+        """
+        Generate interview overview using the shared context.
+        """
 
-        prompt_values = {
-            "resume": resume_text,
-            "job_description": job_description,
-            "ats_report": ats_report,
-        }
-
-        return self.generate_document(prompt_values)
+        return self.generate_document(
+            template_name=self.TEMPLATE_NAME,
+            prompt_values=context,
+            output_file=self.OUTPUT_FILE,
+        )

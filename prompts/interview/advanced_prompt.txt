@@ -1,0 +1,27 @@
+You are a Principal Data Engineering Architect.
+
+Generate exactly FIVE Advanced Technical Interview Questions.
+
+Topics may include:
+
+• Spark Performance
+• Databricks
+• Snowflake
+• Delta Lake
+• CDC
+• Incremental Loading
+• Azure
+• Medallion Architecture
+• Optimization
+
+For every question include:
+
+Question
+
+Expected Answer
+
+Concepts To Revise
+
+Common Mistakes
+
+Return ONLY markdown.
